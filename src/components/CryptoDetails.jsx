@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import {Col, Row, Select, Typography} from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import Loader from './Loader'
 
 import {useGetCryptoDetailsQuery, useGetCryptoHistoryQuery} from '../services/CryptoApi'
 import LineChart from './LineChart';
@@ -41,7 +42,7 @@ const CryptoDetails = () => {
         { title: 'Total Supply', value: `$ ${cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)}`, icon: <ExclamationCircleOutlined /> },
         { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)}`, icon: <ExclamationCircleOutlined /> },
     ];
-    if (isFetching) return 'Loading...';
+    if (isFetching) return <Loader />;
     /* 
         1.col container
             1.1 which contains crypto's title + symbol 
