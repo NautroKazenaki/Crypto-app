@@ -37,7 +37,8 @@ const App = () => {
                 <div className="footer">
                     <Typography.Title level={5} style={{ color: 'white', textAlign: "center" }}>
                         CryptoWorld <br />
-                    All rights reserved
+                        All rights reserved <br />
+                        Created by Nautro Kazenaki
                 </Typography.Title>
                     <Space>
                         <Link to="/">Home</Link>
